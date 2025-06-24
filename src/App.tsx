@@ -6,6 +6,7 @@ import Projects from './components/Projects/Projects';
 import AboutMe from './components/AboutMe/AboutMe';
 import TechStack from './components/TechStack/TechStack';
 import DraggableTile from './components/DraggableTile/DraggableTile';
+import ModernPortfolio from './components/ModernPortfolio/ModernPortfolio';
 import './App.css';
 
 // Import dnd-kit components
@@ -51,6 +52,7 @@ const initialTiles: TileItem[] = [
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [tiles, setTiles] = useState<TileItem[]>(initialTiles);
+  const [viewMode, setViewMode] = useState<'original' | 'modern'>('original');
 
   // Effect for theme initialization (remains the same)
   useEffect(() => {
@@ -101,11 +103,35 @@ function App() {
     }
   }
 
+  // If modern view is selected, render the modern portfolio
+  if (viewMode === 'modern') {
+    return (
+      <div className="relative">
+        {/* Toggle button for switching back */}
+        <button
+          onClick={() => setViewMode('original')}
+          className="fixed top-4 right-4 z-[9999] px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors duration-200 shadow-lg"
+        >
+          Switch to Original
+        </button>
+        <ModernPortfolio />
+      </div>
+    );
+  }
+
   return (
     <div
       className="min-h-screen flex flex-col"
       style={{ backgroundColor: 'var(--background)', color: 'var(--text)' }}
     >
+      {/* Toggle button for switching to modern view */}
+      <button
+        onClick={() => setViewMode('modern')}
+        className="fixed top-4 right-4 z-[9999] px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white rounded-lg transition-all duration-200 shadow-lg"
+      >
+        Switch to Modern
+      </button>
+
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <main className="flex-grow p-4 md:p-8 lg:p-12">
         {/* Wrap grid with DndContext and SortableContext */}

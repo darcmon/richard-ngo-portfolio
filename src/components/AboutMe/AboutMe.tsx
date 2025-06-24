@@ -15,12 +15,6 @@ const AboutMe = () => {
           knowledge and skills I acquired from school.
         </span>
         <span>
-          In my most recent role, I earned a chance to use my skills around
-          audio and visual design to assist the company communicate with
-          consumers, donors, and the community over social media and with a
-          podcast.
-        </span>
-        <span>
           Over the pandemic, I decided I wanted to hone my skills with
           technology and try something new. I learned how to code using
           JavaScript, Python, React.js and many other tools. The guidance of
