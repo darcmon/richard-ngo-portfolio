@@ -112,7 +112,7 @@ const ModernPortfolio = () => {
   };
 
   const handleDownloadCV = () => {
-    window.open('/public/richard-ngo-resume-2026.pdf', '_blank');
+    window.open('/richard-ngo-resume-2026.pdf', '_blank');
   };
 
   const handleContact = () => {
