@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 
 export interface Skill {
   name: string;
@@ -10,7 +10,7 @@ interface SkillBadgeProps {
   icon: string;
 }
 
-const SkillBadge: React.FC<SkillBadgeProps> = ({ name, icon }) => (
+const SkillBadge: FC<SkillBadgeProps> = ({ name, icon }) => (
   <div
     className="
       flex items-center gap-2 px-3 py-2

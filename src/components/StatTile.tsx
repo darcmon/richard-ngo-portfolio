@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 
 export interface Stat {
   value: string;
@@ -12,7 +12,7 @@ interface StatTileProps {
   gradient?: string;
 }
 
-const StatTile: React.FC<StatTileProps> = ({
+const StatTile: FC<StatTileProps> = ({
   value,
   label,
   gradient = 'from-cyan-400 to-purple-400',

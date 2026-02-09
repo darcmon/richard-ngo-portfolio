@@ -21,10 +21,4 @@ export { default as ContactCTA } from './ContactCTA';
 export { default as SectionHeader } from './SectionHeader';
 
 // Icons
-export {
-  GitHubIcon,
-  LinkedInIcon,
-  InstagramIcon,
-  TwitterIcon,
-  EmailIcon,
-} from './SocialIcons';
+export { GitHubIcon, LinkedInIcon, InstagramIcon } from './SocialIcons';

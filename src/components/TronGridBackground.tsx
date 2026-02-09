@@ -12,14 +12,14 @@ interface LightTrailConfig {
 }
 
 class LightTrail implements LightTrailConfig {
-  isHorizontal: boolean = true;
-  speed: number = 0;
-  length: number = 0;
-  opacity: number = 0;
-  x: number = 0;
-  y: number = 0;
-  targetX: number = 0;
-  targetY: number = 0;
+  isHorizontal = true;
+  speed = 0;
+  length = 0;
+  opacity = 0;
+  x = 0;
+  y = 0;
+  targetX = 0;
+  targetY = 0;
 
   private canvasWidth: number;
   private canvasHeight: number;
@@ -115,7 +115,7 @@ const TronGridBackground: React.FC<TronGridBackgroundProps> = ({
     if (!ctx) return;
 
     let animationId: number;
-    let lightTrails: LightTrail[] = [];
+    const lightTrails: LightTrail[] = [];
 
     const resize = (): void => {
       canvas.width = window.innerWidth;

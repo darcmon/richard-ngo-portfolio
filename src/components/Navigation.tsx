@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type FC } from 'react';
 
 interface NavItem {
   label: string;
@@ -19,7 +19,7 @@ const defaultNavItems: NavItem[] = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const Navigation: React.FC<NavigationProps> = ({
+const Navigation: FC<NavigationProps> = ({
   navItems = defaultNavItems,
   logoText = 'Richard Ngo',
   logoInitials = 'RN',

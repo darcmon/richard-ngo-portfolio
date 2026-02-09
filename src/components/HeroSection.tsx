@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 
 interface HeroSectionProps {
   name: string;
@@ -9,7 +9,7 @@ interface HeroSectionProps {
   onDownloadCV?: () => void;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({
+const HeroSection: FC<HeroSectionProps> = ({
   name,
   title,
   description,

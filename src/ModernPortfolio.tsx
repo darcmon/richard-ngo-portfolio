@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Import all components
 import {
   TronGridBackground,
@@ -88,7 +86,7 @@ const SOCIAL_LINKS = [
 // MAIN COMPONENT
 // ============================================
 
-const ModernPortfolio: React.FC = () => {
+const ModernPortfolio = () => {
   // Define glow colors for projects
   const projectGlowColors: GlowColor[] = ['cyan', 'purple', 'pink'];
 
@@ -98,17 +96,15 @@ const ModernPortfolio: React.FC = () => {
   };
 
   const handleDownloadCV = () => {
-    // TODO: Implement CV download
-    console.log('Download CV clicked');
+    window.open('/resume.pdf', '_blank');
   };
 
   const handleContact = () => {
-    const contactSection = document.querySelector('#contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
+    window.location.href = 'mailto:';
   };
 
   return (
-    <div className="min-h-screen text-gray-100 relative overflow-hidden">
+    <div id="home" className="min-h-screen text-gray-100 relative overflow-hidden">
       {/* Tron Grid Background */}
       <TronGridBackground />
 
@@ -156,8 +152,8 @@ const ModernPortfolio: React.FC = () => {
                 About Me
               </h3>
               <div className="space-y-4 text-gray-400">
-                {ABOUT_CONTENT.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
+                {ABOUT_CONTENT.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
                 ))}
               </div>
             </BentoTile>
