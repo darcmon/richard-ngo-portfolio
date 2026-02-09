@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, ReactNode } from 'react';
+import { useState, useEffect, useRef, type FC, type ReactNode } from 'react';
 
 export type GlowColor = 'cyan' | 'purple' | 'pink' | 'green' | 'orange';
 
@@ -18,7 +18,8 @@ const glowColorMap: Record<GlowColor, string> = {
   orange: 'rgba(249, 115, 22, 0.3)',
 };
 
-const BentoTile: React.FC<BentoTileProps> = ({
+const BentoTile: FC<BentoTileProps> = ({
+  id,
   children,
   className = '',
   glowColor = 'cyan',
@@ -34,6 +35,7 @@ const BentoTile: React.FC<BentoTileProps> = ({
 
   return (
     <div
+      id={id}
       ref={tileRef}
       className={`
         relative overflow-hidden rounded-lg

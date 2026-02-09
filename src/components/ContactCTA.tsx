@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 
 interface ContactCTAProps {
   title?: string;
@@ -7,7 +7,7 @@ interface ContactCTAProps {
   onContact?: () => void;
 }
 
-const ContactCTA: React.FC<ContactCTAProps> = ({
+const ContactCTA: FC<ContactCTAProps> = ({
   title = "Let's Work Together",
   subtitle = 'Have a project in mind?',
   buttonText = 'Get In Touch',

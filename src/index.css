@@ -1,35 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* Light Mode (Default - will adjust if needed) */
-  --background-light: #ffffff;
-  --text-light: #1a202c;
-  --grid-line-light: #e2e8f0;
-  --tile-bg-light: #f7fafc;
-  --tile-border-light: #e2e8f0;
-
-  /* Dark Mode */
-  --background-dark: #121212; /* Darker black */
-  --text-dark: #e2e8f0; /* Light gray text */
-  --grid-line-dark: #2d3748; /* Darker gray lines */
-  --tile-bg-dark: #1a202c; /* Dark gray tile bg */
-  --tile-border-dark: #2d3748; /* Darker gray tile border */
-
-  /* Default to Dark Mode */
-  --background: var(--background-dark);
-  --text: var(--text-dark);
-  --grid-line: var(--grid-line-dark);
-  --tile-bg: var(--tile-bg-dark);
-  --tile-border: var(--tile-border-dark);
+  --background: #121212;
+  --text: #e2e8f0;
+  --grid-line: #2d3748;
+  --tile-bg: #1a202c;
+  --tile-border: #2d3748;
 
   font-family: 'Noto Sans', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: dark; /* Set default color scheme */
+  color-scheme: dark;
   color: var(--text);
   background-color: var(--background);
 
@@ -40,51 +24,19 @@
   -webkit-text-size-adjust: 100%;
 }
 
-/* Apply Grid Background and Transitions to body */
+/* Grid background on body */
 body {
   min-height: 100vh;
   background-color: var(--background);
   background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px);
-  background-size: 40px 40px; /* Adjust size of grid squares */
+  background-size: 40px 40px;
   background-position: center center;
-  /* Add transitions for background and text color */
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-  /* Note: Grid line color transition is complex, likely won't fade smoothly */
 }
 
-/* Base styles and transitions for bento tiles */
-.bento-tile {
-  background-color: var(--tile-bg);
-  border: 1px solid var(--tile-border);
-  border-radius: 0.5rem; /* Match rounded-lg */
-  padding: 1.5rem; /* Match p-6 */
-  box-shadow:
-    0 4px 6px -1px rgb(0 0 0 / 0.1),
-    0 2px 4px -2px rgb(0 0 0 / 0.1); /* Match shadow-md */
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease,
-    transform 0.2s ease-in-out; /* Keep existing transform transition */
-}
-
-.bento-tile:hover {
-  transform: scale(1.02); /* Keep existing hover effect */
-}
-
-/* Add a class for light mode */
-.light-mode {
-  --background: var(--background-light);
-  --text: var(--text-light);
-  --grid-line: var(--grid-line-light);
-  --tile-bg: var(--tile-bg-light);
-  --tile-border: var(--tile-border-light);
-
-  color-scheme: light;
-  color: var(--text);
-  background-color: var(--background);
+#root {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 /* Ensure elements using theme variables also transition */
@@ -95,39 +47,6 @@ button {
     background-color 0.3s ease,
     border-color 0.3s ease,
     opacity 0.3s ease;
-}
-
-/* Section transitions and animations */
-.section-hidden {
-  opacity: 0;
-  transform: translateY(20px);
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
-}
-
-.section-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.section-highlight {
-  position: relative;
-}
-
-.section-highlight::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(6, 182, 212, 0.1),
-    transparent 70%
-  );
-  opacity: 0;
-  animation: pulse 1s ease;
-  pointer-events: none;
-  z-index: -1;
 }
 
 /* Custom scrollbar for webkit browsers */
@@ -168,10 +87,5 @@ button:focus {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  .section-hidden {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

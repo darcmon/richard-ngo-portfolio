@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 
 interface FooterProps {
   name?: string;
@@ -6,7 +6,7 @@ interface FooterProps {
   year?: number;
 }
 
-const Footer: React.FC<FooterProps> = ({
+const Footer: FC<FooterProps> = ({
   name = 'Richard Ngo',
   initials = 'RN',
   year = new Date().getFullYear(),

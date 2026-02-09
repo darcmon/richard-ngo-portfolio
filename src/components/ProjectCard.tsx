@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 
 export interface Project {
   title: string;
@@ -8,9 +8,7 @@ export interface Project {
   link?: string;
 }
 
-interface ProjectCardProps extends Project {}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard: FC<Project> = ({
   title,
   description,
   tags,
@@ -60,9 +58,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </h4>
       <p className="text-gray-400 text-sm mb-3 line-clamp-2">{description}</p>
       <div className="flex flex-wrap gap-2">
-        {tags.map((tag, i) => (
+        {tags.map((tag) => (
           <span
-            key={i}
+            key={tag}
             className="px-2 py-1 text-xs bg-cyan-950/50 text-cyan-400 rounded border border-cyan-500/20"
           >
             {tag}
