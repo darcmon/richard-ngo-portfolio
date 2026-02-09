@@ -116,7 +116,7 @@ const ModernPortfolio = () => {
   };
 
   const handleContact = () => {
-    window.location.href = 'mailto:';
+    window.location.href = 'mailto:richard.y.ngo@gmail.com';
   };
 
   return (
