@@ -33,7 +33,7 @@ const PROFILE_DATA = {
 
 const ABOUT_CONTENT = [
   "I've worked over 6 years in the mental health service industry across diverse roles and populations. I'm someone who can empathize, listen, and provide genuine service to anyone in need.",
-  "During the pandemic, I pivoted to technology — learning JavaScript, Python, React.js and more. The guidance of friends and family helped me discover my talent for programming and how to blend my past experience into this new field.",
+  'During the pandemic, I pivoted to technology — learning JavaScript, Python, React.js and more. The guidance of friends and family helped me discover my talent for programming and how to blend my past experience into this new field.',
 ];
 
 const SKILLS_DATA: Skill[] = [
@@ -71,15 +71,31 @@ const PROJECTS_DATA: Project[] = [
 ];
 
 const STATS_DATA: (Stat & { gradient: string })[] = [
-  { value: '6+', label: 'Years Experience', gradient: 'from-cyan-400 to-purple-400' },
-  { value: '15+', label: 'Projects Completed', gradient: 'from-purple-400 to-pink-400' },
+  {
+    value: '6+',
+    label: 'Years Experience',
+    gradient: 'from-cyan-400 to-purple-400',
+  },
+  {
+    value: '15+',
+    label: 'Projects Completed',
+    gradient: 'from-purple-400 to-pink-400',
+  },
   { value: '∞', label: 'Curiosity', gradient: 'from-pink-400 to-orange-400' },
 ];
 
 const SOCIAL_LINKS = [
   { href: 'https://github.com/Darcmon', icon: <GitHubIcon />, label: 'GitHub' },
-  { href: 'https://linkedin.com/in/richardngo-', icon: <LinkedInIcon />, label: 'LinkedIn' },
-  { href: 'https://instagram.com/richyngo', icon: <InstagramIcon />, label: 'Instagram' },
+  {
+    href: 'https://linkedin.com/in/richardngo-',
+    icon: <LinkedInIcon />,
+    label: 'LinkedIn',
+  },
+  {
+    href: 'https://instagram.com/richyngo',
+    icon: <InstagramIcon />,
+    label: 'Instagram',
+  },
 ];
 
 // ============================================
@@ -96,7 +112,7 @@ const ModernPortfolio = () => {
   };
 
   const handleDownloadCV = () => {
-    window.open('/resume.pdf', '_blank');
+    window.open('/public/richard-ngo-resume-2026.pdf', '_blank');
   };
 
   const handleContact = () => {
@@ -104,12 +120,18 @@ const ModernPortfolio = () => {
   };
 
   return (
-    <div id="home" className="min-h-screen text-gray-100 relative overflow-hidden">
+    <div
+      id="home"
+      className="min-h-screen text-gray-100 relative overflow-hidden"
+    >
       {/* Tron Grid Background */}
       <TronGridBackground />
 
       {/* Navigation */}
-      <Navigation logoText={PROFILE_DATA.name} logoInitials={PROFILE_DATA.initials} />
+      <Navigation
+        logoText={PROFILE_DATA.name}
+        logoInitials={PROFILE_DATA.initials}
+      />
 
       {/* Main Content */}
       <main className="relative z-10 pt-24 pb-16 px-4 md:px-8 lg:px-12">
@@ -146,7 +168,12 @@ const ModernPortfolio = () => {
             </BentoTile>
 
             {/* About Me Tile - Spans 2 columns */}
-            <BentoTile id="about" className="lg:col-span-2" glowColor="green" delay={300}>
+            <BentoTile
+              id="about"
+              className="lg:col-span-2"
+              glowColor="green"
+              delay={300}
+            >
               <h3 className="text-xl font-semibold text-cyan-100 mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-green-400" />
                 About Me
@@ -159,20 +186,32 @@ const ModernPortfolio = () => {
             </BentoTile>
 
             {/* Tech Stack Tile - Spans 2 columns */}
-            <BentoTile id="skills" className="lg:col-span-2" glowColor="orange" delay={400}>
+            <BentoTile
+              id="skills"
+              className="lg:col-span-2"
+              glowColor="orange"
+              delay={400}
+            >
               <h3 className="text-xl font-semibold text-cyan-100 mb-4 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-orange-400" />
                 Tech Stack
               </h3>
               <div className="flex flex-wrap gap-2">
                 {SKILLS_DATA.map((skill) => (
-                  <SkillBadge key={skill.name} name={skill.name} icon={skill.icon} />
+                  <SkillBadge
+                    key={skill.name}
+                    name={skill.name}
+                    icon={skill.icon}
+                  />
                 ))}
               </div>
             </BentoTile>
 
             {/* Projects Section Title */}
-            <div id="projects" className="lg:col-span-4 md:col-span-2 mt-8 mb-2">
+            <div
+              id="projects"
+              className="lg:col-span-4 md:col-span-2 mt-8 mb-2"
+            >
               <SectionHeader title="Featured Projects" />
             </div>
 
@@ -195,14 +234,23 @@ const ModernPortfolio = () => {
             ))}
 
             {/* Contact CTA Tile */}
-            <BentoTile id="contact" className="lg:col-span-1" glowColor="pink" delay={800}>
+            <BentoTile
+              id="contact"
+              className="lg:col-span-1"
+              glowColor="pink"
+              delay={800}
+            >
               <ContactCTA onContact={handleContact} />
             </BentoTile>
 
             {/* Stats Tiles */}
             {STATS_DATA.map((stat, index) => (
               <BentoTile key={stat.label} delay={600 + index * 50}>
-                <StatTile value={stat.value} label={stat.label} gradient={stat.gradient} />
+                <StatTile
+                  value={stat.value}
+                  label={stat.label}
+                  gradient={stat.gradient}
+                />
               </BentoTile>
             ))}
           </div>
