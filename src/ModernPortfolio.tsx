@@ -32,13 +32,15 @@ const PROFILE_DATA = {
 };
 
 const ABOUT_CONTENT = [
-  "I've worked over 6 years in the mental health service industry across diverse roles and populations. I'm someone who can empathize, listen, and provide genuine service to anyone in need.",
-  'During the pandemic, I pivoted to technology — learning JavaScript, Python, React.js and more. The guidance of friends and family helped me discover my talent for programming and how to blend my past experience into this new field.',
+  'Advocate for accessible platforms and safe internet use.',
+  'The guidance of friends and family helped me evolve my talent for programming and how to blend my past experience into tech.',
 ];
 
 const SKILLS_DATA: Skill[] = [
   { name: 'React', icon: '⚛️' },
+  { name: 'Vue', icon: '✅' },
   { name: 'TypeScript', icon: '📘' },
+  { name: 'Python', icon: '🐍' },
   { name: 'Node.js', icon: '🟢' },
   { name: 'Express', icon: '🚂' },
   { name: 'JavaScript', icon: '💛' },
@@ -51,35 +53,19 @@ const SKILLS_DATA: Skill[] = [
 
 const PROJECTS_DATA: Project[] = [
   {
-    title: 'E-Commerce Platform',
+    title: 'WiP File Approval System',
+    link: 'https://github.com/darcmon/hastelink',
     description:
-      'Full-stack shopping platform with real-time inventory and secure payments.',
-    tags: ['React', 'Node.js', 'MongoDB'],
-  },
-  {
-    title: 'Task Management App',
-    description:
-      'Collaborative project management tool with drag-and-drop interface.',
-    tags: ['TypeScript', 'Firebase', 'Tailwind'],
-  },
-  {
-    title: 'Health Tracker',
-    description:
-      'Personal wellness app with data visualization and goal tracking.',
-    tags: ['React Native', 'Charts', 'API'],
+      'Work in progress... Collaborative file approval workflow app, with drag-and-drop interface.',
+    tags: ['Python', 'Typescript', 'Vue'],
   },
 ];
 
 const STATS_DATA: (Stat & { gradient: string })[] = [
   {
-    value: '6+',
+    value: '2+',
     label: 'Years Experience',
     gradient: 'from-cyan-400 to-purple-400',
-  },
-  {
-    value: '15+',
-    label: 'Projects Completed',
-    gradient: 'from-purple-400 to-pink-400',
   },
   { value: '∞', label: 'Curiosity', gradient: 'from-pink-400 to-orange-400' },
 ];
@@ -112,7 +98,7 @@ const ModernPortfolio = () => {
   };
 
   const handleDownloadCV = () => {
-    window.open('/richard-ngo-resume-2026.pdf', '_blank');
+    window.open('/richard-ngo-res-2026.pdf', '_blank');
   };
 
   const handleContact = () => {

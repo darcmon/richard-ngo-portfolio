@@ -68,7 +68,7 @@ const ProjectCard: FC<Project> = ({
         ))}
       </div>
     </div>
-    
+
     {link && (
       <a
         href={link}
